@@ -1,0 +1,96 @@
+.resume {
+    padding: 50px;
+    height: 100%;
+}
+
+.timeline-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media only screen and (max-width: 768px) {
+        flex-direction: column; // Stack the items vertically on smaller screens
+        gap: 20px; // Reduce the gap for mobile
+    }
+}
+
+.timeline {
+    &__experience,
+    &__education {
+        width: 48%; // Adjust for side-by-side view
+
+        @media only screen and (max-width: 768px) {
+            width: 100%; // Full width on mobile
+        }
+    }
+
+    &__header {
+        color: var(--yellow-theme-sub-text-color);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        border-bottom: 2px solid var(--yellow-theme-main-color);
+        padding-bottom: 5px;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 1.5rem; // Slightly smaller font on mobile
+        }
+    }
+
+    &__element {
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #b9adad;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 1.4rem; // Adjust for readability on mobile
+        }
+    }
+
+    &__subtitle {
+        font-size: 1.2rem;
+        color: #aaae9e;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 1rem; // Adjust subtitle for smaller screens
+        }
+    }
+
+    &__element p {
+        font-size: 1.3rem;
+        color: #f1eaea;
+        font-weight: bold;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 1.1rem; // Smaller text for better readability
+        }
+    }
+}
+
+// For Timeline Dots
+.vertical-timeline-element-icon {
+    box-shadow: 0 0 0 4px var(--yellow-theme-main-color);
+}
+
+.vertical-timeline-element-content-arrow {
+    display: none;
+    border-right-color: #fff;
+}
+
+// Media Query for mobile responsiveness
+@media only screen and (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        &__experience,
+        &__education {
+            width: 100%; // Make the timeline elements take full width
+            gap: 2rem; // Add some gap between sections on mobile
+        }
+    }
+}
